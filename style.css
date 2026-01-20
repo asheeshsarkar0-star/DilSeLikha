@@ -1,69 +1,86 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0f0f0f;
+  background: #0b0b0b;
   color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 
 header {
   text-align: center;
-  padding: 30px;
-  background: #1a1a1a;
-  border-bottom: 1px solid #333;
+  padding: 35px;
+  background: linear-gradient(45deg,#1a0005,#120006);
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
   color: #ff4d6d;
+  font-size: 2.5rem;
 }
 
-header p {
-  color: #bbb;
+.controls {
+  text-align: center;
+  padding: 20px;
+}
+
+.controls input {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
 }
 
 .shayari-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
   gap: 20px;
-  padding: 30px;
+  padding: 25px;
 }
 
 .card {
-  background: #1c1c1c;
-  padding: 25px;
+  background: #160004;
+  padding: 22px;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 77, 109, 0.15);
+  box-shadow: 0 0 20px rgba(255,60,90,.15);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .card p {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
-.btns {
+.submit-box {
+  text-align: center;
+  padding: 30px;
+  background: #120003;
+}
+
+.submit-box textarea {
+  width: 90%;
+  max-width: 500px;
+  height: 120px;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.submit-box button {
   margin-top: 15px;
-}
-
-.btns button {
-  background: none;
-  border: 1px solid #ff4d6d;
-  color: #ff4d6d;
-  padding: 6px 14px;
-  border-radius: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.btns button:hover {
+  padding: 10px 25px;
   background: #ff4d6d;
-  color: #000;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 footer {
   text-align: center;
   padding: 15px;
-  font-size: 14px;
   color: #888;
 }
