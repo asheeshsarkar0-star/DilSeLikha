@@ -1,25 +1,20 @@
-import { db, ref, push, onValue } from "./firebase.js";
-
-const box = document.getElementById("shayari-box");
-
-onValue(ref(db, "approved"), snapshot => {
-  box.innerHTML = "";
-  snapshot.forEach(data => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `<p>${data.val().text}</p>`;
-    box.prepend(div);
-  });
-});
-
 function submitShayari() {
   const text = document.getElementById("userText").value;
-  if(text.trim()=="") return alert("Dil se likho ❤️");
 
-  push(ref(db, "pending"), {
-    text: text,
-    time: Date.now()
-  });
+  if (text.trim() === "") {
+    alert("Dil se kuch likho ❤️");
+    return;
+  }
 
-  alert("Shayari review ke liye bhej di ❤️");
+  const box = document.getElementById("shayari-box");
+
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<p>${text}</p>`;
+
+  box.prepend(div);
+
+  document.getElementById("userText").value = "";
+
+  alert("Shayari submit ho gayi ❤️");
 }
