@@ -8,7 +8,7 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 22px 50px;
   background: #000;
   border-bottom: 1px solid #222;
 }
@@ -24,15 +24,14 @@ body {
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 25px;
 }
 
 .navbar a {
-  text-decoration: none;
   color: #bbb;
-  font-size: 15px;
+  text-decoration: none;
 }
 
 .navbar a:hover {
@@ -55,5 +54,63 @@ body {
 
 .hero p {
   color: #aaa;
-  margin-top: 10px;
+}
+
+.writer-section {
+  padding: 80px 60px;
+  border-top: 1px solid #222;
+}
+
+.writer-section h2 {
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+.writer-section p {
+  max-width: 700px;
+  line-height: 1.9;
+  color: #aaa;
+}
+
+.story-list {
+  padding: 60px;
+}
+
+.story-card {
+  background: #120005;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.story-card h3 {
+  color: #fff;
+}
+
+.story-card p {
+  color: #aaa;
+}
+
+.story-card a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.reader {
+  max-width: 700px;
+  margin: auto;
+  padding: 60px 20px;
+  line-height: 2;
+}
+
+.reader h1 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
 }
