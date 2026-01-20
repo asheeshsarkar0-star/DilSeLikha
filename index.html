@@ -1,51 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DilSeLikha.in ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>DilSeLikha.in ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <h1>❤️ DilSeLikha.in</h1>
+  <h1>DilSeLikha.in ❤️</h1>
   <p>Jazbaat jo lafzon me dhal gaye</p>
 </header>
 
-<section class="shayari-box">
+<section class="controls">
+  <input type="text" id="search" placeholder="Dil se kuch likha dhoondo...">
+</section>
 
-  <div class="card">
-    <p>
-      "Kuch khwaab adhoore reh gaye,<br>
-      par mohabbat poori thi…"
-    </p>
-    <div class="btns">
-      <button onclick="like(this)">❤️</button>
-      <button onclick="copyText(this)">📋</button>
-    </div>
-  </div>
+<section id="shayari-box" class="shayari-box"></section>
 
-  <div class="card">
-    <p>
-      "Usne chhod diya khamoshi ke saath,<br>
-      aur hum poori zindagi bolte reh gaye…"
-    </p>
-    <div class="btns">
-      <button onclick="like(this)">❤️</button>
-      <button onclick="copyText(this)">📋</button>
-    </div>
-  </div>
-
+<section class="submit-box">
+  <h2>✍️ Apni Shayari Bheje</h2>
+  <textarea id="userText" placeholder="Yahan apne jazbaat likho..."></textarea>
+  <button onclick="submitShayari()">Submit</button>
 </section>
 
 <footer>
-  © 2026 DilSeLikha.in | Created by Asheesh
+© 2026 DilSeLikha.in | Dil se likha hua ❤️
 </footer>
 
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
