@@ -1,28 +1,25 @@
-const shayariList = [
- "Uski yaadon ne hume raat bhar sone nahi diya.",
- "Mohabbat adhuri reh jaye to dard ban jaati hai.",
- "Khaamoshi bhi ek jawab hoti hai.",
- "Hum toot gaye par shikayat nahi ki.",
- "Dil ne kaha sabr rakh, waqt bolega."
-];
+import { db, ref, push, onValue } from "./firebase.js";
 
 const box = document.getElementById("shayari-box");
 
-shayariList.forEach(text => {
-  const div = document.createElement("div");
-  div.className = "card";
-  div.innerHTML = `<p>${text}</p>`;
-  box.appendChild(div);
+onValue(ref(db, "approved"), snapshot => {
+  box.innerHTML = "";
+  snapshot.forEach(data => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `<p>${data.val().text}</p>`;
+    box.prepend(div);
+  });
 });
 
 function submitShayari() {
-  const txt = document.getElementById("userText").value;
-  if (txt.trim() === "") return alert("Kuch likho ❤️");
+  const text = document.getElementById("userText").value;
+  if(text.trim()=="") return alert("Dil se likho ❤️");
 
-  const div = document.createElement("div");
-  div.className = "card";
-  div.innerHTML = `<p>${txt}</p>`;
-  box.prepend(div);
+  push(ref(db, "pending"), {
+    text: text,
+    time: Date.now()
+  });
 
-  document.getElementById("userText").value = "";
+  alert("Shayari review ke liye bhej di ❤️");
 }
