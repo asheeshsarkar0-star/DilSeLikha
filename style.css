@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #ff4d6d;
+}
+
+header p {
+  color: #bbb;
+}
+
+.shayari-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 77, 109, 0.15);
+}
+
+.card p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.btns {
+  margin-top: 15px;
+}
+
+.btns button {
+  background: none;
+  border: 1px solid #ff4d6d;
+  color: #ff4d6d;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btns button:hover {
+  background: #ff4d6d;
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #888;
+}
