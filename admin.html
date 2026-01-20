@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin – DilSeLikha</title>
+<title>DilSeLikha Admin</title>
 </head>
-<body style="background:black;color:white;text-align:center">
-<h2>Admin Panel</h2>
-<p>Future me yahan login + approval system aayega</p>
+<body style="background:#000;color:#fff;padding:20px">
+
+<h2>Admin Panel – DilSeLikha</h2>
+<div id="list"></div>
+
+<script type="module">
+import { db, ref, onValue, push, remove } from "./firebase.js";
+
+const list = document.getElementById("list");
+
+onValue(ref(db,"pending"), snap=>{
+  list.innerHTML="";
+  snap.forEach(data=>{
+    const d=document.createElement("div");
+    d.innerHTML=`
+      <p>${data.val().text}</p>
+      <button onclick="approve('${data.key}','${data.val().text}')">Approve</button>
+    `;
+    list.appendChild(d);
+  });
+});
+
+window.approve=(id,text)=>{
+  push(ref(db,"approved"),{text});
+  remove(ref(db,"pending/"+id));
+}
+</script>
+
 </body>
 </html>
