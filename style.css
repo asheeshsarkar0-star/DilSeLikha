@@ -5,15 +5,20 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 22px 50px;
   background: #000;
   border-bottom: 1px solid #222;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Playfair Display', serif;
   font-size: 26px;
   color: #d4af37;
@@ -23,21 +28,27 @@ body {
   color: #7a0019;
 }
 
+.logo-icon {
+  width: 28px;
+  height: 28px;
+}
+
 .navbar ul {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 25px;
 }
 
 .navbar a {
-  color: #bbb;
   text-decoration: none;
+  color: #bbb;
 }
 
 .navbar a:hover {
   color: #d4af37;
 }
 
+/* HERO */
 .hero {
   height: 85vh;
   display: flex;
@@ -48,22 +59,24 @@ body {
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
+  font-size: 46px;
   color: #fff;
 }
 
 .hero p {
   color: #aaa;
+  margin-top: 10px;
 }
 
+/* WRITER */
 .writer-section {
   padding: 80px 60px;
   border-top: 1px solid #222;
 }
 
 .writer-section h2 {
-  color: #d4af37;
   font-family: 'Playfair Display', serif;
+  color: #d4af37;
   font-size: 32px;
 }
 
@@ -73,44 +86,64 @@ body {
   color: #aaa;
 }
 
-.story-list {
+/* IMAGE COLUMNS */
+.image-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   padding: 60px;
 }
 
-.story-card {
-  background: #120005;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 25px;
+.img-box {
+  position: relative;
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  transition: 0.4s;
 }
 
-.story-card h3 {
-  color: #fff;
+.img-box:hover {
+  transform: translateY(-8px);
 }
 
-.story-card p {
-  color: #aaa;
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
 }
 
-.story-card a {
-  color: #d4af37;
-  text-decoration: none;
-}
-
-.reader {
-  max-width: 700px;
-  margin: auto;
-  padding: 60px 20px;
-  line-height: 2;
-}
-
-.reader h1 {
+.img-text {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
   font-family: 'Playfair Display', serif;
-  color: #fff;
+  font-size: 22px;
+  color: #d4af37;
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   color: #777;
+  border-top: 1px solid #222;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding-left: 25px;
+  }
+
+  .image-columns {
+    grid-template-columns: 1fr;
+    padding: 40px 25px;
+  }
+
+  .img-box {
+    height: 220px;
+  }
 }
